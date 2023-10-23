@@ -38,7 +38,13 @@
 
 /* General Page Layout */
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
+  width: 100%;
   margin: 0;
   background-color: var(--base00);
   color: var(--base07);
@@ -48,7 +54,7 @@ body {
 }
 
 .container {
-  max-width: 52em;
+  max-width: 95%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -61,7 +67,7 @@ div.clearfix {
   overflow: auto;
 }
 
-@media (max-width: 52em) {
+@media (max-width: 100%) {
   .container {
     width: 100%;
   }
@@ -71,8 +77,8 @@ article.single section,
 .article-list article {
   background-color: var(--base07);
   color: var(--base00);
-  padding-left: 8rem;
-  padding-right: 8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -80,32 +86,55 @@ article.single section,
 @media (max-width: 52em) {
   article.single section,
   .article-list article {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
-header, footer {
+header {
   background-color: var(--base01);
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  float: left;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  padding: 12px;
+  color: var(--base0a)
+}
+
 header {
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 52em) {
   header {
     margin-top: 0;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
 footer {
-  margin-top: 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   text-align: center;
   font-size: 0.9em;
@@ -133,12 +162,12 @@ p {
   margin-bottom: 1rem;
 }
 
-h1 { font-size: 2rem }
-h2 { font-size: 1.5rem }
-h3 { font-size: 1.25rem }
-h4 { font-size: 1rem }
-h5 { font-size: .875rem }
-h6 { font-size: .75rem }
+h1 { font-size: 1.25rem }
+h2 { font-size: 1rem }
+h3 { font-size: .875rem }
+h4 { font-size: .75rem }
+h5 { font-size: .625rem }
+h5 { font-size: .5rem }
 
 pre, code {
   font-family: inherit;
@@ -156,8 +185,17 @@ header span.caret {
 }
 
 /* Footer Layout */
-
 footer a {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.9em;
   color: var(--base03);
   text-decoration: none;
 }
@@ -190,6 +228,7 @@ footer a {
 
 @media (max-width: 52em) {
   .homepage {
+    margin-left: 1rem;
     margin-bottom: 2rem;
   }
 }
@@ -207,7 +246,7 @@ footer a {
 }
 
 .homepage h1.headline {
-  font-size: 3em;
+  font-size: 1em;
   color: var(--base0a);
 }
 

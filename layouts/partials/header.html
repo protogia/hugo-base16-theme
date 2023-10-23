@@ -12,23 +12,43 @@
 {{ hugo.Generator }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" type="text/css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
-<link rel="alternate" href="{{ "index.xml" | relURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 <title>{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}</title>
 </head>
 <body>
 
 <header>
+  <a class="path" href="{{ .Site.BaseURL }}" style="text-decoration: none;">
   <div class="container clearfix">
-    <a class="path" href="{{ .Site.BaseURL }}">[{{ .Site.Title }}]</a>
-    <span class="caret"># _</span>
-    <div class="right">
-      {{ range $i, $page := (where .Site.Pages "Section" "pages") }}
-        {{ if not (eq $i 0) }}|{{ end }}
-        <a class="path" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+      <h1 class="site-title">
+        <span class="base05">[</span>
+
+          <span class="base08">p</span>
+          <span class="base09">r</span>
+          <span class="base0a">o</span>
+          <span class="base0b">t</span>
+          <span class="base0c">o</span>
+          <span class="base0d">g</span>
+          <span class="base0e">i</span>
+          <span class="base0f">a</span>
+        <span class="base05">]</span>
+        <span class="base05"># _</span>
+      </h1>
+  </a>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav mr-auto">
+      {{ $current := . }}
+      {{ range .Site.Menus.main }}
+      {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
+      <li class="nav-item {{ if $active }}active{{ end }}">
+        <a class="nav-link" href="{{.URL | absURL}}">{{.Name}}</a>
+      </li>
       {{ end }}
-    </div>
+    </ul>
+  </nav>
+
   </div>
+
 </header>
 
 <div class="container">
