@@ -75,8 +75,8 @@ div.clearfix {
 
 article.single section,
 .article-list article {
-  background-color: var(--base07);
-  color: var(--base00);
+  background-color: var(--base00);
+  color: var(--base05);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 1rem;
@@ -133,7 +133,6 @@ footer {
   bottom: 0;
   height: 40px;
   width: 100%;
-  overflow: hidden;
   margin-top: 1rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -294,7 +293,7 @@ footer a {
 .article-list article h2.headline,
 .article-list article h2.headline a {
   margin-top: 0;
-  color: var(--base0d);
+  color: var(--base0b);
 }
 
 .article-list article .meta {
@@ -311,30 +310,6 @@ footer a {
 }
 
 .article-list article section.summary a { color: var(--base0f); }
-
-/* Pagination */
-
-nav.paginator {
-  text-align: center;
-}
-
-nav.paginator a {
-  color: var(--base0e);
-}
-
-nav.paginator .faded {
-  color: var(--base02);
-}
-
-nav.paginator .nav-left {
-  margin-left: auto;
-  margin-right: 1%;
-}
-
-nav.paginator .nav-right {
-  margin-left: 1%;
-  margin-right: auto;
-}
 
 /* Single Post Layout */
 
@@ -358,14 +333,14 @@ article.single .meta .val, article.single .meta .val a {
   }
 }
 
-article.single h1.headline {
+article.single h2.headline {
   margin-top: 0;
-  font-size: 3em;
-  color: var(--base0a);
+  font-size: 1em;
+  color: var(--base0b);
 }
 
 @media (max-width: 52em) {
-  article.single h1.headline {
+  article.single h2.headline {
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -404,12 +379,10 @@ article.single pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow-x: scroll;
-  border-radius: 3px;
   padding: 2rem;
 }
 
-article.single p code {
-  padding: 0.2em 0.5em;
+article.single code {
   border-radius: 3px;
   background: var(--base03);
   color: var(--base07);
@@ -417,12 +390,7 @@ article.single p code {
 
 article.single figure, article.single div.highlight {
   box-sizing: border-box;
-  max-width: 52rem;
-  width: 52rem;
-  margin-left: -8rem;
-  margin-right: -8rem;
   margin-bottom: 1rem;
-  padding: 1em;
   background-color: var(--base01);
 }
 
@@ -563,3 +531,162 @@ pre { background: var(--base00); color: var(--base07) }
 .highlight .vg { color: var(--base08) } /* Name.Variable.Global */
 .highlight .vi { color: var(--base08) } /* Name.Variable.Instance */
 .highlight .il { color: var(--base09) } /* Literal.Number.Integer.Long */
+
+
+/* redesigned socialshare-template from (https: //codingnconcepts.com/hugo/social-icons-hugo/) */
+
+.social-share {
+  position: relative;
+}
+
+.social-share ul {
+  margin: 0;
+}
+
+.social-share ul li p {
+  display: none;
+}
+
+.social-share .share-icons li {
+  padding: 0 !important;
+}
+
+.social-share .share-btn {
+  padding: 0.5em;
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.social-share-nav .share-btn h3 {
+  color: var(--base06);
+}
+
+ul.share-icons {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1em;
+}
+
+ul.share-icons li {
+  display: inline-block;
+  padding: 0 1em 0 0;
+}
+
+ul.share-icons li:last-child {
+  padding-right: 0;
+}
+
+ul.share-icons li>* {
+  text-decoration: none;
+  border: 0;
+}
+
+ul.share-icons li>*:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+
+ul.share-icons li>* .label {
+  display: none;
+}
+
+.share-btn {
+  display: inline-block;
+  color: var(--base06);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+}
+
+.share-btn:hover {
+  color: var(--base06) !important;
+}
+
+.share-btn:active {
+  position: relative;
+  top: 2px;
+  box-shadow: none;
+  color: var(--base07);
+  outline: none;
+}
+
+.share-btn .widget-social__link-icon {
+  margin: 0;
+}
+
+.share-btn.twitter {
+  background: var(--base0d);
+}
+
+.share-btn.google-plus {
+  background: var(--base08);
+}
+
+.share-btn.facebook {
+  background: var(--base0d);
+}
+
+.share-btn.linkedin {
+  background: var(--base0d);
+}
+
+.share-btn.stumbleupon {
+  background: var(--base08);
+}
+
+.share-btn.pinterest {
+  background: var(--base08);
+}
+
+.share-btn.reddit {
+  background: var(--base09);
+}
+
+.share-btn.email {
+  background: var(--base0e);
+}
+
+.share-btn.whatsapp {
+  background: var(--base0b);
+}
+
+
+.share-btn.twitter:hover {
+  background: var(--base0c);
+}
+
+.share-btn.google-plus:hover {
+  background: var(--base09)
+}
+
+.share-btn.facebook:hover {
+  background: var(--base0c);
+}
+
+.share-btn.linkedin:hover {
+  background: var(--base0c);
+}
+
+.share-btn.stumbleupon:hover {
+  background: var(--base09);
+}
+
+.share-btn.pinterest:hover {
+  background: var(--base0c);
+}
+
+.share-btn.reddit:hover {
+  background: var(--base0a);
+}
+
+.share-btn.email:hover {
+  background: var(--base03);
+}
