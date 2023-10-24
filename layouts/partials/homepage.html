@@ -1,16 +1,9 @@
 {{ $baseurl := .Site.BaseURL }}
 <main role="main" class="homepage">
- 
-  <h1 class="headline">Recent Posts</h1>
 
-  {{ $paginator := .Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) (or .Site.Params.paginate 3) }}
   <div class="article-list">
-    {{ range $paginator.Pages }}
       {{ partial "article-list-item.html" . }}
-    {{ end }}
   </div>
-
-  {{ partial "paginator.html" $paginator }}
 
 {{ with .Site.Taxonomies.categories }}
 
