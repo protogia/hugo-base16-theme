@@ -32,7 +32,6 @@
           <span class="base0e">i</span>
           <span class="base0f">a</span>
         <span class="base05">]</span>
-        <span class="base05"># _</span>
       </h1>
   </a>
 
@@ -41,9 +40,9 @@
       {{ $current := . }}
       {{ range .Site.Menus.main }}
       {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
-      <li class="nav-item {{ if $active }}active{{ end }}">
-        <a class="nav-link" href="{{.URL | absURL}}">{{.Name}}</a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{.URL | absURL}}">{{.Name}}</a>
+        </li>
       {{ end }}
     </ul>
   </nav>
