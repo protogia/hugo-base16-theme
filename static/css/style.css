@@ -73,14 +73,14 @@ div.clearfix {
   }
 }
 
-article.single section,
+article.single ,
 .article-list article {
   background-color: var(--base00);
   color: var(--base05);
 }
 
-@media (max-width: 52em) {
-  article.single section,
+@media (max-width: 40em) {
+  article.single ,
   .article-list article {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -89,8 +89,18 @@ article.single section,
 
 header {
   background-color: var(--base01);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+}
+
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+ol li {
+  display: block;
+  margin-top: 1rem;
 }
 
 ul {
@@ -99,7 +109,7 @@ ul {
   padding: 0;
 }
 
-li {
+ul li {
   float: left;
 }
 
@@ -112,14 +122,6 @@ a {
 
 header {
   margin-bottom: 1rem;
-}
-
-@media (max-width: 52em) {
-  header {
-    margin-top: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
 }
 
 footer {
@@ -135,23 +137,44 @@ footer {
   color: var(--base03);
 }
 
-@media (max-width: 52em) {
+@media (max-width: 40em) {
   footer {
-    margin-top: 0;
-    margin-bottom: 0;
+  position: absolute;
+    left: 0;
+    bottom: -30%;
+    height: 40px;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--base03);
+  }
+}
+
+@media (max-height: 40em) {
+  footer {
+    visibility: hidden;
   }
 }
 
 /* Typography */
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
   font-weight: bold;
   line-height: 1.5;
-  margin-bottom: .5em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h2, h3, h4, h5, h6{
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 0;
 }
 
 p {
-  margin-top: 0;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -201,7 +224,7 @@ footer a {
   font-size: 2em;
 }
 
-@media (max-width: 52em) {
+@media (max-width: 40em) {
   .page-not-found h1 {
     font-size: 3em;
   }
@@ -213,7 +236,8 @@ footer a {
 
 /* Homepage Layout */
 
-@media (max-width: 52em) {
+
+@media (max-width: 40em) {
   .homepage {
     margin-left: 1rem;
     margin-bottom: 2rem;
@@ -226,7 +250,7 @@ footer a {
   color: var(--base0c);
 }
 
-@media (max-width: 52em) {
+@media (max-width: 40em) {
   .homepage h1.site-title {
     font-size: 3em;
   }
@@ -237,30 +261,101 @@ footer a {
   color: var(--base0a);
 }
 
-@media (max-width: 52em) {
+@media (max-width: 40em) {
   .homepage h1.headline {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
-.homepage .hero-logo img {
-  width: 100%;
+img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-.homepage section.categories,
-.homepage section.tags {
-  padding-left: 0rem;
-  padding-right: 2rem;
+/* Split the screen in half */
+
+.homepage .split {
+  width: 50%;
 }
 
-.homepage .category,
-.homepage .category a,
-.homepage .tag,
-.homepage .tag a {
-  color: var(--base0e);
+.homepage .left {
+  position: absolute;
+  top: 50%;
 }
 
+.homepage .right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.homepage .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+@media(max-width: 40em) {
+    .homepage .split {
+    height: 50%;
+  }
+}
+
+@media(max-width: 40em) {
+  .homepage .left {
+    position: absolute;
+    left: 50%;
+    top: 85%;
+  }
+}
+
+@media(max-height: 40em) {
+  .homepage .centered {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+  }
+
+  .homepage .left {
+    position: absolute;
+    left: 25%;
+    top: 75%;
+    font-size: smaller;
+  }
+
+  .homepage .right {
+    position: absolute;
+    left: 75%;
+    top: 80%;
+    font-size: smaller;
+  }
+  
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media(max-width: 40em) {
+  .homepage .right {
+    position: absolute;
+  }
+}
+
+@media(max-width: 40em) {
+.homepage .centered {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    text-align: center;
+  }
+}
 /* Post List Layout */
 
 .article-list h1.list-title {
@@ -293,24 +388,37 @@ footer a {
   color: var(--base09);
 }
 
-.article-list article section.summary a { color: var(--base0f); }
+.article-list article .summary a { color: var(--base0f); }
 
 /* Single Post Layout */
 
-article.single .meta {
-  font-size: 0.9em;
-  text-align: right;
+main.article {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-article.single .meta .key {
-  color: var(--base03);
+main.article h2 {
+  padding: 1rem;
+  color: var(--base05);
 }
 
-article.single .meta .val, article.single .meta .val a {
-  color: var(--base0e);
+main.article .key {
+  font-size: smaller;
+  color: var(--base04);
 }
 
-@media (max-width: 52em) {
+main.article time{
+  font-size: smaller;
+  color: var(--base09);
+}
+
+main.article p {
+  padding: 1rem;
+}
+
+@media (max-width: 40em) {
   article.single .meta {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -323,20 +431,20 @@ article.single h2.headline {
   color: var(--base08);
 }
 
-@media (max-width: 52em) {
+@media (max-width: 40em) {
   article.single h2.headline {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 }
 
-article.single section.body {
+article.single .body {
   padding-top: 4rem;
   padding-bottom: 3rem;
 }
 
-@media (max-width: 52em) {
-  article.single section.body {
+@media (max-width: 40em) {
+  article.single .body {
     padding-top: 2rem;
     padding-bottom: 1rem;
   }
@@ -344,14 +452,13 @@ article.single section.body {
 
 /* Highlight Colors */
 
-article.single section.body h1 { color: var(--base08); }
-article.single section.body h2 { color: var(--base08); }
-article.single section.body h3 { color: var(--base08); }
-article.single section.body h4 { color: var(--base08); }
-article.single section.body h5 { color: var(--base08); }
-article.single section.body h6 { color: var(--base08); }
-
-article.single section.body a { color: var(--base0f); }
+article.single .body h1 { color: var(--base08); }
+article.single .body h2 { color: var(--base08); }
+article.single .body h3 { color: var(--base08); }
+article.single .body h4 { color: var(--base08); }
+article.single .body h5 { color: var(--base08); }
+article.single .body h6 { color: var(--base08); }
+article.single .body a { color: var(--base0f); }
 
 /* Article Elements */
 
@@ -359,8 +466,8 @@ article.single * {
   max-width: 100%;
 }
 
-article.single pre {
-  margin-top: 1rem;
+article.single {
+  margin-top: 2rem;
   margin-bottom: 1rem;
   overflow-x: scroll;
   padding: 2rem;
@@ -379,7 +486,7 @@ article.single figure, article.single div.highlight {
   background-color: var(--base01);
 }
 
-@media (max-width: 52em) {
+@media (max-width: 40em) {
   article.single figure, article.single div.highlight {
     width: 100%;
     margin-left: 0;
