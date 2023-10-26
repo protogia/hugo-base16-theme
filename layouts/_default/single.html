@@ -1,7 +1,23 @@
 {{ partial "header.html" . }}
 
+
 <main role="main" class="article">
-  {{ partial "article.html" . }}
+  <span class="meta">
+  <h2 itemprop="headline">
+    {{ .Title }}{{ if .Draft }} (draft){{ end }}
+
+    {{ if not .Date.IsZero }}
+    <span class="key" style="font-weight: normal">published on</span>
+    <span class="val">
+      <time itemprop="datePublished" datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}
+      </time>
+    </span>
+    {{ end }}
+  </span>
+  </h2>
+  
+  {{ .Content }}
 </main>
+
 
 {{ partial "footer.html" . }}
