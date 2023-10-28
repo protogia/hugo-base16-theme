@@ -180,7 +180,7 @@ p {
 
 h1 { font-size: 1.4rem }
 h2 { font-size: 1.2rem }
-h3 { font-size: .1rem }
+h3 { font-size: 1rem }
 h4 { font-size: .875rem }
 h5 { font-size: .75rem }
 h5 { font-size: .625rem }
@@ -356,85 +356,69 @@ img {
     text-align: center;
   }
 }
+
+
 /* Post List Layout */
 
-.article-list h1.list-title {
-  font-size: 3em;
-  color: var(--base08);
+.article-list h2.headline,
+.article-list h2.headline a {
+  font-size: medium;
+  color: var(--base0b);
+  margin-top: 2rem;
+  padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
-.article-list article {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+.article-list .meta .key {
+  color: var(--base04);
+  padding-left: 1rem;
 }
 
-.article-list article h2.headline,
-.article-list article h2.headline a {
+.article-list .meta .val,
+.article-list .meta .val a {
+  font-size: medium;
   color: var(--base05);
 }
 
-.article-list article .meta {
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-}
-
-.article-list article .meta .key {
-  color: var(--base03);
-}
-
-.article-list article .meta .val,
-.article-list article .meta .val a {
-  color: var(--base09);
-}
-
-.article-list article .summary a { color: var(--base0f); }
+.article-list .summary a { color: var(--base0f); }
 
 /* Single Post Layout */
 
-main.article {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-main.article h2 {
+.single {
   padding: 1rem;
-  color: var(--base05);
+}
+.single h2 {
+  padding-bottom: 1rem;
+  font-size: medium;
+  color: var(--base0b);
 }
 
-main.article .key {
-  font-size: smaller;
+.single .key {
   color: var(--base04);
 }
 
-main.article time{
-  font-size: smaller;
-  color: var(--base09);
+.single .val {
+  font-size: medium;
+  color: var(--base06);
 }
 
-main.article p {
-  padding: 1rem;
+main time{
+  font-size: medium;
+  color: var(--base05);
 }
 
 @media (max-width: 40em) {
-  article.single .meta {
+  .single .meta {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-}
-
-article.single h2.headline {
-  margin-top: 1rem;
-  font-size: 1em;
-  color: var(--base08);
 }
 
 @media (max-width: 40em) {
   article.single h2.headline {
     padding-left: 2rem;
     padding-right: 2rem;
+    color: var(--base08);
   }
 }
 

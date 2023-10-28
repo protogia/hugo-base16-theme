@@ -1,20 +1,23 @@
 {{ partial "header.html" . }}
 
 
-<main role="main" class="article">
+<main role="main" class="single">
   <span class="meta">
   <h2 itemprop="headline">
     {{ .Title }}{{ if .Draft }} (draft){{ end }}
-
+  </h2>
+    
+  <span class="meta">
     {{ if not .Date.IsZero }}
-    <span class="key" style="font-weight: normal">published on</span>
-    <span class="val">
-      <time itemprop="datePublished" datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}
-      </time>
-    </span>
+    <span class="key">date:</span>
+    <span class="val"><time itemprop="datePublished" datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}</time></span>
     {{ end }}
   </span>
-  </h2>
+  <br>
+  <span class="meta">
+    <span class="key">topic:</span>
+    <span class="val">[todo]</span>
+  </span>
   
   {{ .Content }}
 </main>
