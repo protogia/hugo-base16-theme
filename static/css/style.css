@@ -1,5 +1,8 @@
 /* Base16 Eighties Colorscheme by Chris Kempson (http://chriskempson.com) */
 
+@import url("style_maxwidth.css");
+@import url("style_maxheight.css");
+
 :root {
   --base00: #2d2d2d;
   --base01: #393939;
@@ -39,56 +42,78 @@
 /* General Page Layout */
 
 html {
-  position: relative;
-  min-height: 100%;
-}
 
-body {
-  width: 100%;
-  margin: 0;
-  background-color: var(--base00);
+  background-color: rgba(0, 0, 0, 0.3);
   color: var(--base07);
   line-height: 1.5;
-  font-size: 100%;
   font-family: 'Source Code Pro', monospace;
 }
 
-.container {
-  max-width: 95%;
-  margin-left: auto;
-  margin-right: auto;
+video #background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vh;
+  height: 100vh;
+  z-index: -1;  /* Set a lower z-index to keep it in the background */
 }
 
-div.right {
-  float:right;
-}
-
-div.clearfix {
-  overflow: auto;
-}
-
-@media (max-width: 100%) {
-  .container {
+body {
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
     width: 100%;
-  }
-}
-
-article.single ,
-.article-list article {
-  background-color: var(--base00);
-  color: var(--base05);
-}
-
-@media (max-width: 40em) {
-  article.single ,
-  .article-list article {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+    max-width: 100%;
+    min-height: 100%;
+    height: 100%;
+    max-height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 header {
-  background-color: var(--base01);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--base00);
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+  height: 20%;
+}
+
+header .protogia {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-left: 2rem;
+  padding: 0;
+  background-color: var(--base00);
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+header .h1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  background-color: var(--base00);
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+header .navbar {
+  background-color: var(--base00);
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+  min-height: 5rem;
+  height: 5rem;
 }
 
 ol {
@@ -106,22 +131,28 @@ ol li {
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 1rem 0 0 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 5rem;
+  height: 5rem;
 }
 
 ul li {
+  margin-right: 1rem;
+}
+
+.nav-item a {
+  position: relative;
   float: left;
+  display: block;
+  padding: 0.5rem;
+  width: 10rem;
 }
 
 a {
   text-decoration: none;
-  display: block;
-  padding: 12px;
   color: var(--base0a)
-}
-
-header {
-  margin-bottom: 1rem;
 }
 
 footer {
@@ -135,27 +166,6 @@ footer {
   text-align: center;
   font-size: 0.9em;
   color: var(--base03);
-}
-
-@media (max-width: 40em) {
-  footer {
-  position: absolute;
-    left: 0;
-    bottom: -30%;
-    height: 40px;
-    width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-size: 0.9em;
-    color: var(--base03);
-  }
-}
-
-@media (max-height: 40em) {
-  footer {
-    visibility: hidden;
-  }
 }
 
 /* Typography */
@@ -178,95 +188,22 @@ p {
   margin-bottom: 1rem;
 }
 
-h1 { font-size: 1.4rem }
-h2 { font-size: 1.2rem }
-h3 { font-size: 1rem }
-h4 { font-size: .875rem }
-h5 { font-size: .75rem }
-h5 { font-size: .625rem }
-
 pre, code {
   font-family: inherit;
   font-size: inherit;
 }
 
-/* Header Layout */
-
-header a.path {
-  color: var(--base0d);
-}
-
-header span.caret {
-  color: var(--base07);
-}
-
-/* Footer Layout */
-footer a {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 40px;
-  width: 100%;
-  overflow: hidden;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  font-size: 0.9em;
-  color: var(--base03);
-  text-decoration: none;
-}
 
 /* 404 Page Layout */
 
 .page-not-found h1 {
-  margin-top: 12rem;
+  margin-top: 25rem;
   text-align: center;
   font-size: 2em;
 }
 
-@media (max-width: 40em) {
-  .page-not-found h1 {
-    font-size: 3em;
-  }
-
-  .page-not-found h2 {
-    font-size: 2em;
-  }
-}
 
 /* Homepage Layout */
-
-
-@media (max-width: 40em) {
-  .homepage {
-    margin-left: 1rem;
-    margin-bottom: 2rem;
-  }
-}
-
-.homepage h1.site-title {
-  text-align: center;
-  font-size: 5em;
-  color: var(--base0c);
-}
-
-@media (max-width: 40em) {
-  .homepage h1.site-title {
-    font-size: 3em;
-  }
-}
-
-.homepage h1.headline {
-  font-size: 1em;
-  color: var(--base0a);
-}
-
-@media (max-width: 40em) {
-  .homepage h1.headline {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
 
 img {
   width: 150px;
@@ -300,65 +237,14 @@ img {
   text-align: center;
 }
 
-@media(max-width: 40em) {
-    .homepage .split {
-    height: 50%;
-  }
-}
-
-@media(max-width: 40em) {
-  .homepage .left {
-    position: absolute;
-    left: 50%;
-    top: 85%;
-  }
-}
-
-@media(max-height: 40em) {
-  .homepage .centered {
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-align: center;
-  }
-
-  .homepage .left {
-    position: absolute;
-    left: 25%;
-    top: 75%;
-    font-size: smaller;
-  }
-
-  .homepage .right {
-    position: absolute;
-    left: 75%;
-    top: 80%;
-    font-size: smaller;
-  }
-  
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-}
-
-@media(max-width: 40em) {
-  .homepage .right {
-    position: absolute;
-  }
-}
-
-@media(max-width: 40em) {
-.homepage .centered {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    text-align: center;
-  }
-}
-
 
 /* Post List Layout */
+
+.article-list {
+  position: relative;
+  left: 1.3rem;
+  top: 10rem;
+}
 
 .article-list h2.headline,
 .article-list h2.headline a {
@@ -385,12 +271,22 @@ img {
 /* Single Post Layout */
 
 .single {
-  padding: 1rem;
+  position: relative;
+  left: 2.3rem;
+  top: 12rem;
+  max-width: 90%;
 }
-.single h2 {
+
+.single .headline {
   padding-bottom: 1rem;
   font-size: medium;
   color: var(--base0b);
+}
+
+.single h1, h2, h3, h4, h5, h6 {
+  padding-bottom: 1rem;
+  font-size: medium;
+  color: var(--base0e);
 }
 
 .single .key {
@@ -407,137 +303,11 @@ main time{
   color: var(--base05);
 }
 
-@media (max-width: 40em) {
-  .single .meta {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-@media (max-width: 40em) {
-  article.single h2.headline {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    color: var(--base08);
-  }
-}
-
 article.single .body {
   padding-top: 4rem;
   padding-bottom: 3rem;
 }
 
-@media (max-width: 40em) {
-  article.single .body {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-  }
-}
-
-/* Highlight Colors */
-
-article.single .body h1 { color: var(--base08); }
-article.single .body h2 { color: var(--base08); }
-article.single .body h3 { color: var(--base08); }
-article.single .body h4 { color: var(--base08); }
-article.single .body h5 { color: var(--base08); }
-article.single .body h6 { color: var(--base08); }
-article.single .body a { color: var(--base0f); }
-
-/* Article Elements */
-
-article.single * {
-  max-width: 100%;
-}
-
-article.single {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  overflow-x: scroll;
-  padding: 2rem;
-}
-
-article.single code {
-  border-radius: 3px;
-  background: var(--base03);
-  color: var(--base07);
-}
-
-article.single figure, article.single div.highlight {
-  box-sizing: border-box;
-  margin-bottom: 1rem;
-  margin-bottom: 1rem;
-  background-color: var(--base01);
-}
-
-@media (max-width: 40em) {
-  article.single figure, article.single div.highlight {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    border-radius: 3px;
-  }
-}
-
-article.single figure img {
-  max-width: 100%;
-  width: 100%;
-  border-radius: 3px;
-}
-
-article.single figure figcaption {
-  margin-top: 1rem;
-}
-
-article.single figure figcaption h4 {
-  margin-top: 0;
-  text-align: center;
-  font-style: italic;
-  font-weight: normal;
-  color: var(--base07);
-}
-
-article.single table {
-  border-collapse: separate;
-  border-spacing: 0;
-  max-width: 100%;
-  width: 100%;
-}
-
-article.single th,
-article.single td {
-  padding: .25rem 1rem;
-  line-height: inherit;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--base04);
-}
-
-article.single tr:last-child td {
-  border-bottom: 0;
-}
-
-article.single th {
-  text-align: left;
-  font-weight: bold;
-  vertical-align: bottom;
-}
-
-article.single td { vertical-align: top }
-
-article.single blockquote {
-  margin-left: 2rem;
-  margin-right: 3rem;
-  padding-left: 1rem;
-  border-left: 5px solid var(--base0c);
-}
-
-article.single hr {
-  border: 0;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: var(--base04);
-}
 
 /* Pygments template by Jan T. Sott (https://github.com/idleberg) */
 
