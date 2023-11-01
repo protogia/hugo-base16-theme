@@ -1,0 +1,27 @@
+{{ $baseurl := .Site.BaseURL }}
+
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+
+{{ partial "head.html" . }}
+
+    <body>
+
+        {{ partial "header.html" . }}
+        {{ partial "backgroundmedia.html" . }}
+        
+        <main role="main" class="homepage">
+            <div class="split left">
+                <div class="centered">
+                    {{.Content}}
+
+                </div>
+            </div>
+
+            {{ partial "about.html" . }}
+        </main>
+
+        {{ partial "footer.html" . }}
+
+    </body>
+</html>
