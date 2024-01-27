@@ -10,16 +10,14 @@
         {{ partial "header.html" . }}
         {{ partial "backgroundmedia.html" . }}
         
-        <main role="main" class="homepage">
-            <div class="split left">
-                <div class="centered">
-                    {{.Content}}
-
-                </div>
-            </div>
-
-            {{ partial "about.html" . }}
+        <main role="main" class="article-list">
+            {{ range where .Site.Pages "Section" "in" (slice "blog" "projects") }}
+                {{ if not .IsNode }}
+                    {{ partial "article-list-item.html" . }}
+                {{ end }}
+            {{ end }}
         </main>
+        
 
         {{ partial "footer.html" . }}
 
