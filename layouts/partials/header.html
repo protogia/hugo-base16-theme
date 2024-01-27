@@ -23,7 +23,7 @@
       {{ range .Site.Menus.main }}
       {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
         <li class="nav-item">
-          <a class="nav-link" href="{{.URL | absURL}}">{{.Name}}</a>
+          <a class="nav-link {{ if eq .Name " Projects" }}navbar-item-yellow{{ else if eq .Name "Blog:Offtopic" }} navbar-item-orange{{ end }}" href="{{.URL | absURL}}">{{.Name}}</a>
         </li>
       {{ end }}
     </ul>
