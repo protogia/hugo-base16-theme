@@ -149,8 +149,18 @@ ul li {
 }
 
 a {
+  color: var(--base0a);
   text-decoration: none;
-  color: var(--base0a)
+}
+
+.navbar-item-yellow {
+  text-decoration: none;
+  color: var(--base09);
+}
+
+.navbar-item-orange {
+  text-decoration: none;
+  color: var(--base0a);
 }
 
 footer {
