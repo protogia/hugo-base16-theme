@@ -2,7 +2,7 @@
   
   <div class="split listitemdescription">
     <h2 class="headline" itemprop="headline">
-      <a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} (draft){{ end }}</a>
+      <a href="{{ .RelPermalink }}"><span style="color: {{ .Params.color }};">{{ .Title }}{{ if .Draft }} (draft){{ end }}</span></a>
     </h2>
       <span class="meta">
         {{ if not .Date.IsZero }}

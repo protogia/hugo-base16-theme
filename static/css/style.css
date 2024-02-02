@@ -163,6 +163,16 @@ a {
   color: var(--base0a);
 }
 
+.navbar-item-green {
+  text-decoration: none;
+  color: var(--base0b);
+}
+
+.navbar-item-lightblue {
+  text-decoration: none;
+  color: var(--base0c);
+}
+
 footer {
   position: absolute;
   left: 0;

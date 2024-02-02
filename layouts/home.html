@@ -11,7 +11,7 @@
         {{ partial "backgroundmedia.html" . }}
         
         <main role="main" class="article-list">
-            {{ range where .Site.Pages "Section" "in" (slice "blog" "projects") }}
+            {{ range where .Site.Pages "Section" "in" (slice "blog" "projects" "gists" "favourites") }}
                 {{ if not .IsNode }}
                     {{ partial "article-list-item.html" . }}
                 {{ end }}
