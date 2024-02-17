@@ -1,26 +1,35 @@
 <article class="list-item" itemscope itemtype="http://schema.org/Blog">
-  
   <div class="split listitemdescription">
-    <h2 class="headline" itemprop="headline">
-      <a href="{{ .RelPermalink }}"><span style="color: {{ .Params.color }};">{{ .Title }}{{ if .Draft }} (draft){{ end }}</span></a>
-    </h2>
-      <span class="meta">
-        {{ if not .Date.IsZero }}
-            <span class="key">date:</span>
-            <span class="val"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}</time></span>      
-        {{ end }}
-      </span>
-      <br>
-      <span class="meta">
-        <span class="key">topic:</span>
-        <span class="val">
-          [{{ range $key, $taxonomy := .Params.categories }}
-            {{ $taxonomy }} 
-          {{ end }}]
-        </span>
-      </span>
-    </div>
+    {{ if (not (isset .Params "redirectlink")) }}
+      <h2 class="headline" itemprop="headline">
+        <a href="{{ .RelPermalink }}"><span style="color: {{ .Params.color }};">{{ .Title }}{{ if .Draft }} (draft){{ end }}</span></a>
+      </h2>
+    {{ else }}
+      <h2 class="headline" itemprop="headline">
+        <a href="{{ .Params.redirectlink }}"><span style="color: {{ .Params.color }};">{{ .Title }}{{ if .Draft }} (draft){{ end }}</span></a>
+      </h2>
+    {{ end }}
 
-    <div class="split listitemvisual">
-    </div>
+    <span class="meta">
+      <span class="key">topic:</span>
+      <span class="val">
+        [{{ range $key, $taxonomy := .Params.categories }}
+          {{ $taxonomy }}
+        {{ end }}]
+      </span>
+    </span>
+    <br>
+    <span class="meta">
+      {{ if and (not (isset .Params "redirectlink")) (not .Date.IsZero) }}
+        <span class="key">date:</span>
+        <span class="val"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}</time></span>
+      {{ else }}
+        <span class="key">info:</span>
+        <span class="val"><time itemprop="datePublished">{{ .Params.info }}</time></span>
+      {{ end }}
+     </span>
+  </div>
+
+  <div class="split listitemvisual">
+  </div>
 </article>
