@@ -1,8 +1,5 @@
 /* Base16 Eighties Colorscheme by Chris Kempson (http://chriskempson.com) */
 
-@import url("style_maxwidth.css");
-@import url("style_maxheight.css");
-
 :root {
   --base00: #2d2d2d;
   --base01: #393939;
@@ -46,28 +43,14 @@ html {
   color: var(--base07);
   line-height: 1.5;
   font-family: 'Source Code Pro', monospace;
-}
-
-img #background {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vh;
-  height: 100vh;
-  z-index: -1;  /* Set a lower z-index to keep it in the background */
+  font-size: medium;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 body {
-    left: 0;
-    top: 0;
-    display: flex;
+    display: column;
     flex-direction: column;
-    min-width: 100%;
-    width: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    height: 100%;
-    max-height: 100%;
 }
 
 header {
@@ -75,17 +58,14 @@ header {
   left: 0;
   top: 0;
   background-color: var(--base00);
-  min-width: 100%;
   width: 100%;
-  max-width: 100%;
   height: 20%;
+  margin-left: 2rem;
 }
 
 header .protogia {
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin-left: 2rem;
+  display: row;
+  flex-direction: row;
   padding: 0;
   background-color: var(--base00);
   min-width: 100%;
@@ -94,9 +74,6 @@ header .protogia {
 }
 
 header .h1 {
-  position: absolute;
-  left: 0;
-  top: 0;
   margin: 0;
   padding: 0;
   background-color: var(--base00);
@@ -107,11 +84,9 @@ header .h1 {
 
 header .navbar {
   background-color: var(--base00);
-  min-width: 100%;
+  display: row;
+  flex-direction: row;
   width: 100%;
-  max-width: 100%;
-  min-height: 5rem;
-  height: 5rem;
 }
 
 ol {
@@ -154,50 +129,32 @@ a {
 }
 
 .navbar-item-yellow {
-  text-decoration: none;
   color: var(--base09);
 }
 
 .navbar-item-orange {
-  text-decoration: none;
   color: var(--base0a);
 }
 
 .navbar-item-green {
-  text-decoration: none;
   color: var(--base0b);
 }
 
 .navbar-item-lightblue {
-  text-decoration: none;
   color: var(--base0c);
 }
 
-footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 40px;
-  width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  font-size: 0.9em;
-  color: var(--base03);
-}
 
 /* Typography */
 
 h1 {
   font-weight: bold;
-  line-height: 1.5;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
 h2, h3, h4, h5, h6{
   font-weight: normal;
-  line-height: 1.5;
   margin-bottom: 0;
 }
 
@@ -222,6 +179,10 @@ pre, code {
 
 
 /* Homepage Layout */
+
+main {
+  margin-left: 2rem;
+}
 
 img {
   width: 150px;
@@ -260,7 +221,6 @@ img {
 
 .article-list {
   position: relative;
-  left: 1.3rem;
   top: 10rem;
 }
 
@@ -269,13 +229,11 @@ img {
   font-size: medium;
   color: var(--base0b);
   margin-top: 2rem;
-  padding-left: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
 .article-list .meta .key {
   color: var(--base04);
-  padding-left: 1rem;
 }
 
 .article-list .meta .val,
@@ -290,7 +248,6 @@ img {
 
 .single {
   position: relative;
-  left: 2.3rem;
   top: 12rem;
   max-width: 90%;
 }
@@ -395,3 +352,78 @@ pre { background: var(--base00); color: var(--base07) }
 .highlight .vg { color: var(--base08) } /* Name.Variable.Global */
 .highlight .vi { color: var(--base08) } /* Name.Variable.Instance */
 .highlight .il { color: var(--base09) } /* Literal.Number.Integer.Long */
+
+
+
+/* css for mobile-devices and vertical-view */
+@media (max-width: 440px) {
+    
+  /* Typography */
+  html {
+      font-size: medium;
+  }
+
+  h1 {
+      font-size: medium;
+      font-weight: bold;
+      line-height: 1.0;
+      margin-top: 0.8rem;
+      margin-bottom: 0.8rem;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      font-size: medium;
+      font-weight: normal;
+      line-height: 1.2;
+      margin-bottom: 0;
+  }
+
+  p {
+    font-size: medium;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+
+  .homepage .split {
+      height: 50%;
+  }
+
+
+  .homepage .right {
+      position: absolute;
+  }
+
+  .homepage .centered {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      text-align: center;
+  }
+
+  /* Articel list */
+
+  .article-list h2 .headline,
+  .article-list h2 .headline a {
+    font-size: medium;
+  }
+  
+  .article-list .headlin span,
+  .article-list .meta,
+  .article-list .meta .val,
+  .article-list .meta .val a,
+  .article-list .meta span time {
+    font-size: medium;
+  }
+  
+  /* single-page-layout */
+
+  .article-list h2.headline a {
+    font-size: medium;
+  }
+
+}
