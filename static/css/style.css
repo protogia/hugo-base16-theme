@@ -44,13 +44,15 @@ html {
   line-height: 1.5;
   font-family: 'Source Code Pro', monospace;
   font-size: medium;
-  min-width: 100%;
-  min-height: 100%;
+  width: 80%;
+  height: 100%;
+  min-height: 90%;
 }
 
 body {
-    display: column;
-    flex-direction: column;
+  display: column;
+  flex-direction: column;
+  margin-left: 3rem;
 }
 
 header {
@@ -60,7 +62,7 @@ header {
   background-color: var(--base00);
   width: 100%;
   height: 20%;
-  margin-left: 2rem;
+  margin-left: 4rem;
 }
 
 header .protogia {
@@ -90,14 +92,14 @@ header .navbar {
 }
 
 ol {
-  list-style-type: none;
+  /* list-style-type: none; */
   margin: 0;
   padding: 0;
 }
 
 
 ol li {
-  display: block;
+  /* display: block; */
   margin-top: 1rem;
 }
 
@@ -105,8 +107,8 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 100%;
-  max-width: 100%;
+  width: 80%;
+  max-width: 80%;
   min-height: 5rem;
   height: 5rem;
 }
@@ -164,8 +166,10 @@ p {
 }
 
 pre, code {
+  overflow-y: auto;
   font-family: inherit;
   font-size: inherit;
+  padding: 1rem;
 }
 
 
@@ -182,19 +186,18 @@ pre, code {
 
 main {
   margin-left: 2rem;
+  padding-bottom: 2rem;
 }
 
-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
+.full-width-image {
+  width: 100%;
+  height: auto;
 }
 
 /* Split the screen in half */
 
 .homepage .split {
-  width: 50%;
+  width: 80%;
 }
 
 .homepage .left {
@@ -244,12 +247,10 @@ img {
 
 .article-list .summary a { color: var(--base0f); }
 
-/* Single Post Layout */
 
 .single {
   position: relative;
   top: 12rem;
-  max-width: 90%;
 }
 
 .single .headline {
@@ -272,6 +273,13 @@ img {
   font-size: medium;
   color: var(--base06);
 }
+
+.single ul {
+  list-style-type: circle;
+  margin: 1rem;
+  padding: 1rem; 
+}
+
 
 main time{
   font-size: medium;
@@ -356,19 +364,35 @@ pre { background: var(--base00); color: var(--base07) }
 
 
 /* css for mobile-devices and vertical-view */
-@media (max-width: 440px) {
+@media (max-width: 580px) {
     
   /* Typography */
+
   html {
-      font-size: medium;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  header {
+    font-size: medium;
+    margin-left: 2.4rem;
+    width: 100%;
+  }
+
+  header .protogia h1 {
+    font-size: x-large;
+  }
+
+  main {
+    padding-top: 1rem;
+    margin-left: 0;
   }
 
   h1 {
       font-size: medium;
       font-weight: bold;
       line-height: 1.0;
-      margin-top: 0.8rem;
-      margin-bottom: 0.8rem;
   }
 
   h2,
@@ -384,8 +408,8 @@ pre { background: var(--base00); color: var(--base07) }
 
   p {
     font-size: medium;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
 
@@ -426,4 +450,13 @@ pre { background: var(--base00); color: var(--base07) }
     font-size: medium;
   }
 
+  ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ul li {
+    margin-bottom: 0.5rem;
+  }
 }
