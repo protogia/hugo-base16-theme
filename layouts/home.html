@@ -8,7 +8,6 @@
     <body>
 
         {{ partial "header.html" . }}
-        {{ partial "backgroundmedia.html" . }}
         
         <main role="main" class="article-list">
             {{ range where .Site.Pages "Section" "in" (slice "blog" "projects" "gists" "favourites") }}
