@@ -50,25 +50,26 @@ html {
 }
 
 body {
+  position: absolute; 
   display: column;
   flex-direction: column;
-  margin-left: 3rem;
+  left: 20%;
+  width: 60%;
 }
 
 header {
   position: absolute;
-  left: 0;
   top: 0;
   background-color: var(--base00);
+  height: 10%;
   width: 100%;
-  height: 20%;
-  margin-left: 4rem;
 }
 
 header .protogia {
   display: row;
   flex-direction: row;
   padding: 0;
+  margin: 0;
   background-color: var(--base00);
   min-width: 100%;
   width: 100%;
@@ -109,7 +110,7 @@ ul {
   padding: 0;
   width: 80%;
   max-width: 80%;
-  min-height: 5rem;
+  /* min-height: 5rem; */
   height: 5rem;
 }
 
@@ -151,8 +152,6 @@ a {
 
 h1 {
   font-weight: bold;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 h2, h3, h4, h5, h6{
@@ -185,7 +184,7 @@ pre, code {
 /* Homepage Layout */
 
 main {
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
   padding-bottom: 2rem;
 }
 
@@ -374,11 +373,27 @@ pre { background: var(--base00); color: var(--base07) }
     width: 100%;
   }
 
+  body {
+    position: absolute; 
+    display: column;
+    flex-direction: column;
+    left: 5%;
+    width: 90%;
+  }
+  
   header {
-    font-size: medium;
-    margin-left: 2.4rem;
+    position: absolute;
+    top: 0;
+    background-color: var(--base00);
+    height: 10%;
     width: 100%;
   }
+  
+
+  /* header {
+    font-size: medium;
+    width: 100%;
+  } */
 
   header .protogia h1 {
     font-size: x-large;
