@@ -24,14 +24,7 @@
         {{ end }}
       </span>
       <br>
-      <span class="meta">
-        <span class="key">topic:</span>
-        <span class="val">
-          [{{ range $key, $taxonomy := .Params.categories }}
-          {{ $taxonomy }} 
-        {{ end }}]
-        </span>
-      </span>
+      <br>
       
       {{ .Content }}
     </main>

@@ -9,16 +9,6 @@
         <a href="{{ .Params.redirectlink }}"><span style="color: {{ .Params.color }};">{{ .Title }}{{ if .Draft }} (draft){{ end }}</span></a>
       </h2>
     {{ end }}
-
-    <span class="meta">
-      <span class="key">topic:</span>
-      <span class="val">
-        [{{ range $key, $taxonomy := .Params.categories }}
-          {{ $taxonomy }}
-        {{ end }}]
-      </span>
-    </span>
-    <br>
     <span class="meta">
       {{ if and (not (isset .Params "redirectlink")) (not .Date.IsZero) }}
         <span class="key">date:</span>
@@ -28,7 +18,9 @@
         <span class="val"><time itemprop="datePublished">{{ .Params.info }}</time></span>
       {{ end }}
      </span>
-  </div>
+     <br>
+     <br>
+    </div>
 
   <div class="split listitemvisual">
   </div>
