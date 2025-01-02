@@ -28,13 +28,12 @@
             navbar-item-yellow
           {{ else if eq .Name " Blog" }}
             navbar-item-orange
-          {{ else if eq .Name " Gists" }}
-            navbar-item-green
           {{ else if eq .Name "Favourites" }}
             navbar-item-lightblue
           {{ end }}" href="{{.URL | absURL}}">{{.Name}}</a>
-        </li>
       {{ end }}
+      <a class="nav-link navbar-item-green" href="http://localhost:1313/about">About</a>
+      </li>
     </ul>
   </nav>
 
