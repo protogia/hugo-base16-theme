@@ -44,7 +44,7 @@ html {
   line-height: 1.5;
   font-family: 'Source Code Pro', monospace;
   font-size: medium;
-  width: 100%;
+  width: 80%;
   height: 100%;
   min-height: 90%;
 }
@@ -388,13 +388,13 @@ pre { background: var(--base00); color: var(--base07) }
     width: 90%;
   }
   
-  header {
+  /* header {
     position: absolute;
     top: 0;
     background-color: var(--base00);
     height: 10%;
     width: 100%;
-  }
+  } */
   
 
   /* header {
