@@ -290,6 +290,10 @@ article.single .body {
   padding-bottom: 3rem;
 }
 
+img {
+  display: block; /* Ensures block-level layout */
+  margin: 2rem auto; /* Center alignment */
+}
 
 /* Pygments template by Jan T. Sott (https://github.com/idleberg) */
 
