@@ -292,7 +292,8 @@ article.single .body {
 
 img {
   display: block; /* Ensures block-level layout */
-  margin: 2rem auto; /* Center alignment */
+  margin-top: 2rem auto; 
+  margin-bottom: 2rem auto; 
 }
 
 /* Pygments template by Jan T. Sott (https://github.com/idleberg) */
